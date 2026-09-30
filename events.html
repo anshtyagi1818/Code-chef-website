@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a19">
+  <meta name="description" content="Browse coding competitions, workshops, and community events at CodeChef ABESEC.">
+  <title>Events | CodeChef ABESEC</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="events">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CodeChef ABESEC home"><span class="brand-mark">CC</span><span>CodeChef <b>ABESEC</b></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a class="active" href="events.html" aria-current="page">Events</a><a href="register.html">Register</a><a href="admin.html">Admin</a></nav>
+    <a class="header-cta" href="register.html">Join the community <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="page-hero"><div><p class="eyebrow"><span class="status-dot"></span> THE CAMPUS CALENDAR</p><h1>Find your<br><span>next challenge.</span></h1></div><p>Competitive sprints, hands-on sessions, and ideas worth building. There’s room for every kind of curious.</p><div class="page-hero-index">EVENTS / 2026</div></section>
+    <section class="events-section section-block">
+      <div class="filter-bar" role="search">
+        <label class="search-field"><span class="sr-only">Search by event name</span><span aria-hidden="true">⌕</span><input id="eventSearch" type="search" placeholder="Search events" autocomplete="off"></label>
+        <label class="select-field"><span class="sr-only">Filter by category</span><select id="categoryFilter"><option value="">All categories</option></select></label>
+        <label class="select-field"><span class="sr-only">Sort events</span><select id="eventSort"><option value="date-asc">Soonest first</option><option value="date-desc">Latest first</option><option value="name-asc">Name A–Z</option></select></label>
+        <p class="results-count" id="eventCount" aria-live="polite"></p>
+      </div>
+      <div id="eventGrid" class="event-grid"></div>
+      <div id="eventsEmpty" class="empty-state" hidden><span class="empty-mark">{ }</span><h2>No events match that search.</h2><p>Try another name or category, or clear your filters.</p><button class="button button-outline" type="button" id="clearEventFilters">Clear filters</button></div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark">CC</span><span>CodeChef <b>ABESEC</b></span></a><p>Made on campus, for the curious.</p><div class="footer-links"><a href="events.html">Events</a><a href="register.html">Register</a><a href="mailto:codechef@abes.ac.in">Contact</a><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a></div><small>© 2026 CodeChef ABESEC · ABES Engineering College</small></footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a19">
+  <meta name="description" content="Manage CodeChef ABESEC events and student registrations.">
+  <title>Admin | CodeChef ABESEC</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CodeChef ABESEC home"><span class="brand-mark">CC</span><span>CodeChef <b>ABESEC</b></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="events.html">Events</a><a href="register.html">Register</a><a class="active" href="admin.html" aria-current="page">Admin</a></nav>
+    <a class="header-cta" href="events.html">View public calendar <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="admin-main">
+    <section id="adminLogin" class="admin-login section-block">
+      <div class="admin-login-copy"><p class="eyebrow"><span class="status-dot"></span> ORGANIZER ACCESS</p><h1>Good to<br><span>have you back.</span></h1><p>Keep the campus calendar moving. Sign in to manage events and registrations.</p></div>
+      <form id="adminLoginForm" class="login-panel"><p class="eyebrow">ADMIN SIGN IN</p><h2>Welcome back.</h2><label class="field"><span>Email</span><input name="email" type="email" autocomplete="username" required value="admin@codechefabsec.in"></label><label class="field"><span>Password</span><input name="password" type="password" autocomplete="current-password" required value="chef@2026"></label><p id="loginError" class="form-error" role="alert" hidden>Those credentials didn’t match. Please try again.</p><button class="button button-primary submit-button" type="submit">Sign in <span aria-hidden="true">→</span></button><div class="demo-credentials"><strong>Demo credentials</strong><span>Email: admin@codechefabsec.in</span><span>Password: chef@2026</span></div></form>
+    </section>
+    <section id="adminDashboard" class="admin-dashboard section-block" hidden>
+      <div class="admin-heading"><div><p class="eyebrow"><span class="status-dot"></span> ORGANIZER WORKSPACE</p><h1>Event <span>control room.</span></h1></div><button class="button button-outline button-small" id="adminLogout" type="button">Sign out</button></div>
+      <div class="stats-grid"><article class="stat-card"><span>TOTAL EVENTS</span><strong id="statEvents">0</strong><i aria-hidden="true">01</i></article><article class="stat-card stat-accent"><span>TOTAL REGISTRATIONS</span><strong id="statRegistrations">0</strong><i aria-hidden="true">02</i></article><article class="stat-card"><span>UPCOMING EVENTS</span><strong id="statUpcoming">0</strong><i aria-hidden="true">03</i></article></div>
+      <div class="admin-columns"><section class="admin-panel event-editor-panel"><div class="panel-heading"><div><p class="eyebrow">EVENT MANAGEMENT</p><h2 id="eventFormTitle">Add an event</h2></div><span class="panel-mark" aria-hidden="true">+</span></div>
+        <form id="adminEventForm" class="stack-form compact-form"><input type="hidden" name="eventId"><label class="field"><span>Event name <b>*</b></span><input name="name" type="text" required maxlength="100" placeholder="e.g. Weekend Code Jam"></label>
+          <div class="field-grid"><label class="field"><span>Category <b>*</b></span><select name="category" required><option value="" disabled selected>Select category</option><option>Competition</option><option>Workshop</option><option>Hackathon</option><option>Talk</option><option>Community</option></select></label><label class="field"><span>Date <b>*</b></span><input name="date" type="date" required></label><label class="field"><span>Time <b>*</b></span><input name="time" type="time" required></label><label class="field"><span>Venue <b>*</b></span><input name="venue" type="text" required maxlength="100" placeholder="e.g. Seminar Hall 2"></label></div>
+          <label class="field"><span>Description <b>*</b></span><textarea name="description" rows="3" required maxlength="280" placeholder="What will students learn or experience?"></textarea></label><label class="check-field"><input name="featured" type="checkbox"><span>Feature this event on the home page</span></label><p id="eventFormError" class="form-error" role="alert" hidden></p><div class="form-actions"><button class="button button-primary" type="submit" id="saveEventButton">Add event <span aria-hidden="true">+</span></button><button class="button button-quiet" type="button" id="cancelEdit" hidden>Cancel edit</button></div>
+        </form>
+      </section>
+      <section class="admin-panel event-list-panel"><div class="panel-heading"><div><p class="eyebrow">ON THE CALENDAR</p><h2>Manage events</h2></div><span class="panel-mark" aria-hidden="true">↗</span></div><div id="adminEventList" class="admin-event-list"></div></section></div>
+      <section class="admin-panel registrations-panel"><div class="panel-heading registration-heading"><div><p class="eyebrow">WHO’S COMING</p><h2>Registrations <span id="registrationTableCount" class="heading-count">0</span></h2></div><a class="under-link" href="events.html">Public calendar <span aria-hidden="true">↗</span></a></div>
+        <div class="registration-filters"><label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Search registrations by name, email, or college</span><input id="registrationSearch" type="search" placeholder="Search name, email, or college" autocomplete="off"></label><label class="select-field"><span class="sr-only">Filter registrations by event</span><select id="registrationEventFilter"><option value="">All events</option></select></label></div>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>STUDENT</th><th>COLLEGE / YEAR</th><th>EVENT</th><th>PHONE</th><th>REGISTERED</th></tr></thead><tbody id="registrationTableBody"></tbody></table><div id="registrationEmpty" class="empty-state table-empty" hidden><span class="empty-mark">{ }</span><h3>No registrations to show.</h3><p>They’ll appear here when students sign up.</p></div></div>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark">CC</span><span>CodeChef <b>ABESEC</b></span></a><p>Made on campus, for the curious.</p><div class="footer-links"><a href="events.html">Events</a><a href="register.html">Register</a><a href="mailto:codechef@abes.ac.in">Contact</a><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a></div><small>© 2026 CodeChef ABESEC · ABES Engineering College</small></footer>
+</body>
+</html>

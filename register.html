@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a19">
+  <meta name="description" content="Save your seat at the next CodeChef ABESEC campus event.">
+  <title>Register | CodeChef ABESEC</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="register">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CodeChef ABESEC home"><span class="brand-mark">CC</span><span>CodeChef <b>ABESEC</b></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="events.html">Events</a><a class="active" href="register.html" aria-current="page">Register</a><a href="admin.html">Admin</a></nav>
+    <a class="header-cta" href="events.html">Browse events <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="page-hero page-hero-compact"><div><p class="eyebrow"><span class="status-dot"></span> SAVE YOUR SEAT</p><h1>Good things<br><span>start here.</span></h1></div><p>Bring your questions, your half-finished idea, or just your curiosity. We’ll take it from there.</p><div class="page-hero-index">REGISTRATION / 2026</div></section>
+    <section class="register-layout section-block">
+      <aside class="form-aside"><p class="eyebrow">ONE QUICK FORM</p><h2>We’ll see you<br>there.</h2><p>Fill in your details and pick an event. Your registration is saved locally and you’ll see a confirmation as soon as it’s complete.</p><div class="aside-detail"><span class="aside-icon" aria-hidden="true">01</span><div><strong>Choose your event</strong><span>Pick from the current campus calendar.</span></div></div><div class="aside-detail"><span class="aside-icon" aria-hidden="true">02</span><div><strong>Show up ready</strong><span>We’ll keep your spot on the list.</span></div></div></aside>
+      <div class="form-panel"><div id="registrationSuccess" class="success-message" role="status" aria-live="polite" hidden><span class="success-icon" aria-hidden="true">✓</span><div><strong>You’re on the list.</strong><p>Your registration has been saved. See you at the event!</p></div></div>
+        <form id="registrationForm" class="stack-form">
+          <div class="form-heading"><p class="eyebrow">STUDENT REGISTRATION</p><h2>Your details</h2><p>Fields marked <span aria-hidden="true">*</span> are required.</p></div>
+          <div class="field-grid"><label class="field"><span>Full name <b>*</b></span><input name="name" type="text" autocomplete="name" placeholder="e.g. Aanya Sharma" required maxlength="80"></label><label class="field"><span>Email address <b>*</b></span><input name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="120"></label>
+            <label class="field"><span>College <b>*</b></span><input name="college" type="text" autocomplete="organization" placeholder="College or university" required maxlength="120"></label><label class="field"><span>Year of study <b>*</b></span><select name="year" required><option value="" disabled selected>Select your year</option><option value="1st Year">1st Year</option><option value="2nd Year">2nd Year</option><option value="3rd Year">3rd Year</option><option value="4th Year">4th Year</option><option value="Other">Other</option></select></label>
+            <label class="field"><span>Phone number <b>*</b></span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="10-digit mobile number" pattern="[0-9+() .-]{7,20}" required maxlength="20"></label><label class="field"><span>Choose an event <b>*</b></span><select name="eventId" id="registrationEvent" required><option value="" disabled selected>Select an event</option></select></label>
+          </div>
+          <p id="registrationFormError" class="form-error" role="alert" hidden></p>
+          <button class="button button-primary submit-button" type="submit">Complete registration <span aria-hidden="true">→</span></button>
+          <p class="privacy-note">Your information is used only for this event registration.</p>
+        </form>
+        <div id="noRegistrationEvents" class="empty-state form-empty" hidden><span class="empty-mark">{ }</span><h2>No open events yet.</h2><p>When the next event is announced, it will show up here.</p><a class="button button-outline" href="events.html">Browse the calendar</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark">CC</span><span>CodeChef <b>ABESEC</b></span></a><p>Made on campus, for the curious.</p><div class="footer-links"><a href="events.html">Events</a><a href="register.html">Register</a><a href="mailto:codechef@abes.ac.in">Contact</a><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a></div><small>© 2026 CodeChef ABESEC · ABES Engineering College</small></footer>
+</body>
+</html>
